@@ -1,13 +1,12 @@
 {
-  "name": "app",
+  "name": "express_cowsay",
   "version": "1.0.0",
-  "description": "",
+  "description": "Cowsay running over Express",
+  "author": "Cassi Lup <cassi.lup@gmail.com>",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
-  "author": "Cassi Lup <cassi.lup@gmail.com>",
-  "license": "MIT",
   "dependencies": {
     "cowsay": "^1.1.9",
     "express": "^4.15.3"

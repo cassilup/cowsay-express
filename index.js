@@ -8,10 +8,20 @@ const PORT = 8080;
 
 // App
 const app = express();
-app.get('/', function (req, res) {
-  const responseText = cowsay.say({
-    text : req.query.text ? req.query.text : "hi!"
-  });
+
+app.get("/", function (req, res) {
+  res.redirect("/Hello Awesome HackTalks People!");
+});
+
+app.get("/:text", function (req, res) {
+  let text;
+
+  try {
+    text = req.params.text;
+  } catch (e) {
+    text = "Hi Awesome HackTalks People!";
+  }
+  const responseText = `<pre>${cowsay.say({ text })}</pre>`;
 
   res.send(responseText);
 });
