@@ -10,7 +10,7 @@ const PORT = 8080;
 const app = express();
 
 app.get("/", function (req, res) {
-  res.redirect("/Hello Awesome HackTalks People!");
+  res.redirect("/Hello from Docker!");
 });
 
 app.get("/:text", function (req, res) {
