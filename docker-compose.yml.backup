@@ -3,9 +3,10 @@ version: "2"
 services:
   web:
     build: .
-    command: /usr/src/app/node_modules/.bin/nodemon
+    command: nodemon --inspect=5858
     volumes:
       - .:/usr/src/app
+      - /usr/src/app/node_modules
     ports:
-      - "8080:8080"
+      - "10080:8080"
       - "5858:5858"

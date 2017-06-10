@@ -2,6 +2,7 @@ FROM node:boron
 
 # Create app directory
 RUN mkdir -p /usr/src/app
+RUN npm install nodemon -g
 WORKDIR /usr/src/app
 
 # Install app dependencies
