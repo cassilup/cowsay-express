@@ -19,7 +19,7 @@ app.get("/:text", function (req, res) {
   try {
     text = req.params.text;
   } catch (e) {
-    text = "Hi Awesome HackTalks People!";
+    text = "Hi Awesome People!";
   }
   const responseText = `<pre>${cowsay.say({ text })}</pre>`;
 

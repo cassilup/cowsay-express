@@ -10,5 +10,8 @@
   "dependencies": {
     "cowsay": "^1.1.9",
     "express": "^4.15.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
   }
 }
