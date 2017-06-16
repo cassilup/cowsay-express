@@ -16,18 +16,18 @@ The tutorial consists of 5 main parts:
 
 ## 1. Running the example app locally
 
-#### 1. Clone the repo
+#### 1.1. Clone the repo
 ```bash
 git clone https://github.com/cassilup/express-cowsay
 ```
 
-#### 2. Since this is a node.js app, we need to grab the needed packages from npm
+#### 1.2. Since this is a node.js app, we need to grab the needed packages from npm
 ```bash
 npm install
 ```
 If all went well, you now have a new folder named `node_modules/`.
 
-#### 3. Start the app by running:
+#### 1.3. Start the app by running:
 ```bash
 node index.js
 ```
@@ -35,12 +35,12 @@ node index.js
 You should see the following in your terminal:
 ![app running natively](http://i.imgur.com/9Ce9zC3.png)
 
-#### 4. Open http://localhost:8080 in your browser.
+#### 1.4. Open http://localhost:8080 in your browser.
 
 You should see the following:
 ![app running natively](http://i.imgur.com/e7tZxgZ.png)
 
-#### 5. Stop the app and clean the project
+#### 1.5. Stop the app and clean the project
 We want to reset the project to its original state, without any `npm` packages installed. That is because we will start the server inside a Docker container and the `node_modules/` folder will be created inside the container, without our
 
 First, we will stop the server by hitting `CTRL`+`C`.
@@ -88,10 +88,10 @@ For more info about possible keywords, [click here](https://docs.docker.com/engi
 
 ## 3. Deploying the app to the cloud and have it built using the Dockerfile
 
-#### 1. Install _[now.sh](https://now.sh)_
+#### 3.1. Install _[now.sh](https://now.sh)_
 Follow [the official instructions](https://zeit.co/download).
 
-#### 2. Run the following command
+#### 3.2. Run the following command
 ```
 now --docker
 ```
@@ -99,7 +99,7 @@ now --docker
 Notice the new URL for our deployed app in the command line:
 ![docker building image](http://i.imgur.com/pNxQBRQ.png)
 
-#### 3. Access the app's URL
+#### 3.3. Access the app's URL
 
 Accessing that URL returns information about our deployment:
 ![docker building image](http://i.imgur.com/WQm8q70.png)
@@ -123,25 +123,25 @@ For more information on the VM used by Docker, [click here](https://docs.docker.
 
 Steps to generate a `Docker` image out of our `Dockerfile`:
 
-#### 1. Build the project into a `Docker` image
+#### 4.1. Build the project into a `Docker` image
 ```
 docker build -t cowsay-express .
 ```
 Notice the intermediate containers being created.
 ![docker building image](http://i.imgur.com/UUUm96u.png)
 
-#### 2. Start a container from the image we just built
+#### 4.2. Start a container from the image we just built
 ```
 docker run -p 10080:8080 -d cowsay-express
 ```
 ![docker successfully built image](http://i.imgur.com/Fcr7sxH.png)
 
-#### 3. Navigate to http://localhost:10080 and _voilá!_
+#### 4.3. Navigate to http://localhost:10080 and _voilá!_
 ![node app running in Docker](http://i.imgur.com/w3FKlVy.png)
 
 __Very Important:__ Notice that there's no `node_modules/` in our code. This means that the app is actually running in the `Docker` container.
 
-#### 4. Access the internal folder structure of the container by opening a shell inside it
+#### 4.4. Access the internal folder structure of the container by opening a shell inside it
 ```
 docker exec -it <container id> sh
 ```
@@ -176,7 +176,7 @@ In order to be able to develop in our own host OS and have the code changes refl
 
 The steps we need to take are:
 
-#### 1. Create a new file `docker-compose.yml`:
+#### 5.1. Create a new file `docker-compose.yml`:
 ```
 version: "2"
 
@@ -196,9 +196,9 @@ Through this file, we're telling `Docker` to mount our current folder as a share
 
 Mounting our current folder enables us to make changes and have them be served directly from the container as they occur.
 
-**Note:** We need the `- /usr/src/app/node_modules` line in order to have the `node_modules` folder persisted as intermediate containers are being built.
+**Note:** We need the `- /usr/src/app/node_modules` line in order to have the `node_modules/` folder persisted as intermediate containers are being built.
 
-#### 2. Install `nodemon` through `Dockerfile`
+#### 5.2. Install `nodemon` through `Dockerfile`
 Add the following line to the `Dockerfile`:
 
 ```
@@ -220,14 +220,14 @@ EXPOSE 8080
 CMD [ "npm", "start" ]
 ```
 
-#### 3. Run `docker-compose up` in order to bring up the project with the mounted folder and `nodemon` listening for changes:
+#### 5.3. Run `docker-compose up` in order to bring up the project with the mounted folder and `nodemon` listening for changes:
 ![docker-compose running](http://i.imgur.com/v2HtnlF.png)
 
-#### 4. Navigate to http://localhost:10080
+#### 5.4. Navigate to http://localhost:10080
 ![node app running in Docker](http://i.imgur.com/w3FKlVy.png)
 
 
-#### 5. Make a change in the code and reload http://localhost:10080
+#### 5.5. Make a change in the code and reload http://localhost:10080
 ![container showing changes](http://i.imgur.com/ZyAYBeM.png)
 
 **Bonus**: *You can debug the Node app directly in the browser.*
