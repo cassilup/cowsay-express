@@ -7,7 +7,7 @@ If you're curious about the tutorial's context, check out the [presentation slid
 
 The tutorial consists of 5 main parts:
 1. [Running the example app locally](#1-running-the-example-app-locally)
-2. [Create the Dockerfile](#2-create-the-dockerfile) container using [now.sh](https://now.sh)
+2. [Create the Dockerfile](#2-create-the-dockerfile)
 3. [Deploying the app to the cloud and have it built using the Dockerfile](#3-deploying-the-app-to-the-cloud-and-have-it-built-using-the-dockerfile)
 4. [Running the example app locally in a Docker container (Production Mode)](#4-running-the-example-app-locally-in-a-docker-container-production-mode)
 5. [Running the example app in a Docker container listening for code changes (Development Mode)](#5-running-the-example-app-in-a-docker-container-listening-for-code-changes-development-mode)
