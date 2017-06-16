@@ -5,11 +5,12 @@ Welcome, this is a tutorial on `Docker`-ising a WebApp.
 If you're curious about the tutorial's context, check out the [presentation slides](https://docs.google.com/presentation/d/1yIS3pzWe98EQLiDv5t31N1VZjmE8jYUVuVnR9ziN5A4/present).
 [![slides](http://i.imgur.com/KPYdeho.png)](https://docs.google.com/presentation/d/1yIS3pzWe98EQLiDv5t31N1VZjmE8jYUVuVnR9ziN5A4/present)
 
-The tutorial consists of 4 main parts:
-1. [Running the example app locally](1. Running the example app locally)
-2. Deploying the example app packaged in a Docker container using [now.sh](https://now.sh)
-3. Running the example app in a Docker container (Production Mode)
-4. Running the example app in a Docker container listening for code changes (Development Mode)
+The tutorial consists of 5 main parts:
+1. [Running the example app locally](#1-running-the-example-app-locally)
+2. [Create the Dockerfile](#2-create-the-dockerfile) container using [now.sh](https://now.sh)
+3. [Deploying the app to the cloud and have it built using the Dockerfile](#3-deploying-the-app-to-the-cloud-and-have-it-built-using-the-dockerfile)
+4. [Running the example app locally in a Docker container (Production Mode)](#4-running-the-example-app-locally-in-a-docker-container-production-mode)
+5. [Running the example app in a Docker container listening for code changes (Development Mode)](#5-running-the-example-app-in-a-docker-container-listening-for-code-changes-development-mode)
 
 ---
 
@@ -163,7 +164,7 @@ For more info, [click here](https://docs.docker.com/engine/reference/run/)
 
 ---
 
-## 4. Running the example app in a Docker container listening for code changes (Development Mode)
+## 5. Running the example app in a Docker container listening for code changes (Development Mode)
 
 By default, `node` doesn't "listen" for code changes. So when you make code changes, you need to restart the `node` process in order to have it take changes into account.
 
