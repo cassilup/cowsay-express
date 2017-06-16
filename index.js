@@ -10,7 +10,7 @@ const PORT = 8080;
 const app = express();
 
 app.get("/", function (req, res) {
-  res.redirect("/Hello from Docker!");
+  res.redirect("/Moo!");
 });
 
 app.get("/:text", function (req, res) {
@@ -21,7 +21,10 @@ app.get("/:text", function (req, res) {
   } catch (e) {
     text = "Hi Awesome People!";
   }
-  const responseText = `<pre>${cowsay.say({ text })}</pre>`;
+  const responseText = `
+    <pre>${cowsay.say({ text })}</pre>
+    <br/><br/>
+  `;
 
   res.send(responseText);
 });
