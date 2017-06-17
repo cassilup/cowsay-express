@@ -235,4 +235,6 @@ CMD [ "npm", "start" ]
 Congrats. You're now a Docker guru (almost). 😎
 
 ---
-Thanks for reading so far down! If you find any inconsistencies, please be sure to let me know. I hope this tutorial got you on the right track, `Docker`-wise. 👋
+Thanks for reading so far down! If you find any inconsistencies, please be sure to let me know. I hope this tutorial got you on the right track, `Docker`-wise.
+
+If you enjoyed this, [drop me a line](https://twitter.com/cassilup)! I'd love to hear from you.
