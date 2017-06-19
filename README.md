@@ -82,6 +82,7 @@ Few `Dockerfile` keywords that you should be aware of:
 * `COPY`: Copies files from the host machine (your native OS) to the container's filesystem.
 * `EXPOSE`: Opens up a port so that we can access our container.
 * `CMD`: Special command that is run **every time** the container is started.
+
 For more info about possible keywords, [click here](https://docs.docker.com/engine/reference/builder/).
 
 ---
@@ -160,6 +161,7 @@ Other useful commands:
 * `docker stop <container id>` -> stop a container
 * `docker rm <container id>` -> remove a container
 * `docker image rm <image name>` -> remove an image
+
 For more info, [click here](https://docs.docker.com/engine/reference/run/)
 
 ---
